@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Button Display Example</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f4f4f4;
+        }
+
+        #buttonContainer {
+            text-align: center;
+        }
+
+        button {
+            padding: 10px 20px;
+            margin: 5px;
+            font-size: 16px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        #display {
+            width: 200px;
+            height: 50px;
+            padding: 20px;
+            font-size: 18px;
+            background-color: #ffffff;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+
+<body>
+    <input type="text" id="input-box">
+    <div id="buttonContainer">
+        <button onclick="htmll()">Enter 1st Value</button>
+        <br />
+        <br />
+        <button onclick="asign()" id="ayush">Enter 2nd Value</button>
+        <br />
+        <button onclick="promptt()" id="lucky">Enter 3rd Value</button>
+    </div>
+
+    <div id="display"></div>
+
+    <script>
+        function htmll() {
+            let x = document.getElementById("input-box").value;
+            // alert
+            alert("HTML =" + x);
+        }
+        function asign() {
+            let x = "HELLO";
+
+            //   output
+            alert("ASSIGN = " + x)
+        }
+        function promptt() {
+            let x = prompt("ENTER A VALUE =");
+            //   output
+            alert("PROMPT =" + x);
+        }
+    </script>
+
+</body>
+
+</html>

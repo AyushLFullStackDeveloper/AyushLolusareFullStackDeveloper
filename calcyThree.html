@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        /* Resetting default margin and padding */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #2c3e50;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .main {
+            background-color: #34495e;
+            height: 90vh;
+            width: 40vw;
+            display: grid;
+            grid-template-rows: 1fr 4fr;
+            border-radius: 10px;
+        }
+
+        .one {
+            background-color: #2c3e50;
+            border-bottom: 2px solid #1f2c38;
+        }
+
+        .two {
+            background-color: #2c3e50;
+            padding: 20px;
+        }
+
+        .mid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-gap: 10px;
+        }
+
+        button {
+            text-align: center;
+            background-color: #95a5a6;
+            height: 60px;
+            border: none;
+            border-radius: 5px;
+            font-size: 24px;
+            color: #fff;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #7f8c8d;
+        }
+
+        #display {
+            background-color: #1aa648;
+            height: 100px;
+            border-radius: 5px;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            padding: 0 20px;
+            font-size: 36px;
+            color: #fff;
+        }
+
+        .bottom {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-gap: 10px;
+        }
+
+        .Ac {
+            background-color: #e74c3c;
+        }
+
+        .div,
+        .mul,
+        .minus,
+        .plus {
+            background-color: #3498db;
+        }
+
+        .clear {
+            background-color: #f39c12;
+        }
+
+        .new {
+            background-color: #2ecc71;
+        }
+
+        .bottom button {
+            font-size: 24px;
+        }
+
+        .bottom button.plus {
+            grid-column: span 2;
+        }
+    </style>
+
+    <script>
+        let total = 0;
+        let action = 0;
+        let displayString = "";
+
+        function add() {
+            total = Number(displayString);
+            displayString = "";
+            action = 1;
+            document.getElementById("display").innerHTML = displayString;
+
+        }
+        function divi() {
+            total = Number(displayString);
+            action = 2;
+            displayString = "";
+            document.getElementById("display").innerHTML = displayString;
+        }
+
+        function mul() {
+            total = Number(displayString);
+            action = 3;
+            displayString = "";
+            document.getElementById("display").innerHTML = displayString;
+        }
+        function minus() {
+            total = Number(displayString);
+            action = 4;
+            displayString = "";
+            document.getElementById("display").innerHTML = displayString;
+        }
+
+        function backspace() {
+            displayString = displayString.substring(0, displayString.length - 1)
+            document.getElementById("display").innerHTML = displayString;
+        }
+
+        function numberType(passnumber) {
+            displayString = displayString + passnumber.toString();
+            document.getElementById("display").innerHTML = displayString;
+        }
+        function clearFunction() {
+            total = 0;
+            displayString = "";
+            document.getElementById("display").innerHTML = "";
+        }
+
+        // 
+        function showresult() {
+            if (action == 1) {
+                total = total + Number(displayString);
+            }
+            else if (action == 2) {
+                total = total / Number(displayString);
+            }
+            else if (action == 3) {
+                total = total * Number(displayString);
+            }
+            else if (action == 4) {
+                total = total - Number(displayString);
+            }
+
+            displayString = total;
+            document.getElementById("display").innerHTML = displayString;
+        }
+
+    </script>
+</head>
+
+<body>
+    <!-- main -->
+    <div class="main">
+        <!-- display -->
+        <div class="one">
+            <h1 id="display"></h1>
+        </div>
+        <div class="two">
+            <div class="mid">
+                <div><button class="Ac" onclick="clearFunction()">Ac</button></div>
+                <div><button class="div" onclick="divi()">/</button></div>
+                <div><button class="div">%</button></div>
+                <div><button class="clear" onclick="backspace()"> -- </button></div>
+                <div><button class="new" onclick="numberType(7)">7</button></div>
+                <div><button class="new" onclick="numberType(8)">8</button></div>
+                <div><button class="new" onclick="numberType(9)">9</button></div>
+                <div><button class="div" onclick="mul()">X</button></div>
+                <div><button class="new" onclick="numberType(4)">4</button></div>
+                <div><button class="new" onclick="numberType(5)">5</button>
+                </div>
+                <div><button class="new" onclick="numberType(6)">6</button></div>
+                <div><button class="div" onclick="minus()">-</button></div>
+                <div><button class="new" onclick="numberType(1)">1</button></div>
+                <div><button class="new" onclick="numberType(2)">2</button></div>
+                <div><button class="new" onclick="numberType(3)">3</button></div>
+                <div><button class="div" onclick="add()">+</button></div>
+            </div>
+            <!-- bottom -->
+            <div class="bottom">
+                <div><button class="plus" onclick="numberType(0)">0</button></div>
+                <div><button class="ak">.</button></div>
+                <div><button class="sec" onclick="showresult()">= </button></div>
+            </div>
+
+        </div>
+
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Improved Design</title>
+  <style>
+    /* Define styles in the head for better organization */
+    .container {
+      height: 50vh; /* 50% of the viewport height */
+      width: 70vw; /* 70% of the viewport width */
+      border: 5px solid black;
+      margin: 10vh auto; /* 10% of the viewport height from top and auto horizontally */
+      position: relative; /* Position relative for absolute positioning */
+    }
+
+    .color-block {
+      width: 100%;
+      height: 33.33%; /* 1/3 of the container height */
+    }
+
+    .orange {
+      background-color: #FE7A36;
+    }
+
+    .white {
+      background-color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .green {
+      background-color: green;
+    }
+
+    img {
+      height: 33.33%; /* 1/3 of the container height */
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+    /* Hide overflow to prevent scrollbar */
+    body {
+      overflow: hidden;
+    }
+
+   
+  </style>
+</head>
+
+<body>
+  <!-- Main container -->
+  <div class="container">
+    <!-- 1st color block -->
+    <div class="color-block orange"></div>
+
+    <!-- 2nd color block -->
+    <div class="color-block white">
+      <!-- Center the image -->
+      <img src="https://png.pngtree.com/png-vector/20220813/ourmid/pngtree-ashok-chakra-png-image_6109577.png" alt="Ashok Chakra">
+    </div>
+
+    <!-- 3rd color block -->
+    <div class="color-block green"></div>
+  </div>
+</body>
+
+</html>

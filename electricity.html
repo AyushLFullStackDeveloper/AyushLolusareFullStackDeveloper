@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Electricity Bill</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 20px auto;
+            background-color: #c98c8c;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            font-weight: bold;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        input[type="number"] {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        .result {
+            margin-top: 20px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            background-color: #f9f9f9;
+        }
+    </style>
+</head>
+
+<body style="background-image: url(https://t3.ftcdn.net/jpg/02/16/48/06/360_F_216480626_7D9oipMrGQ66GPni8c5D2j25i2aJqDio.jpg);
+     background-attachment: fixed;
+      background-position: center; 
+      background-size: cover;
+      background-repeat: no-repeat;">
+
+    <div class="container">
+        <h1>Electricity Bill</h1>
+        <div class="form-group">
+            <label for="name">Name:</label>
+            <input type="text" id="name" placeholder="Enter your name">
+        </div>
+        <div class="form-group">
+            <label for="address">Address:</label>
+            <input type="text" id="address" placeholder="Enter your address">
+        </div>
+        <div class="form-group">
+            <label for="meterReading">Meter Reading (kWh):</label>
+            <input type="number" id="meterReading" placeholder="Enter meter reading">
+        </div>
+        <button onclick="calculateBill()">Calculate Bill</button>
+        <div class="result" id="result"></div>
+    </div>
+
+    <script>
+        function calculateBill() {
+            var name = document.getElementById('name').value;
+            var address = document.getElementById('address').value;
+            var meterReading = parseFloat(document.getElementById('meterReading').value);
+            var unitRate = 7.50; // Replace with actual unit rate per kWh for Maharashtra
+
+            if (isNaN(meterReading)) {
+                alert('Please enter a valid meter reading.');
+                return;
+            }
+
+            var billAmount = meterReading * unitRate;
+
+            var resultHTML = `
+      <h2>Electricity Bill</h2>
+      <p><strong>Name:</strong> ${name}</p>
+      <p><strong>Address:</strong> ${address}</p>
+      <p><strong>Meter Reading:</strong> ${meterReading} kWh</p>
+      <p><strong>Unit Rate:</strong> ₹${unitRate} per kWh</p>
+      <p><strong>Total Amount:</strong> ₹${billAmount.toFixed(2)}</p>
+    `;
+
+            document.getElementById('result').innerHTML = resultHTML;
+        }
+    </script>
+
+</body>
+
+</html>

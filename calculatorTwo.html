@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        .main {
+            background-color: black;
+            height: 90vh;
+            width: 40vw;
+            display: grid;
+            grid-template-rows: 1fr 4fr;
+            margin-left: 30%;
+            margin-top: 5px;
+            border-style: solid;
+            border-radius: 10px;
+
+        }
+
+        #display {
+            background-color: #1aa648;
+            height: 100px;
+
+
+        }
+
+        .two {
+            background-color: #EEEDEB;
+            height: 80%;
+            width: 100%;
+        }
+
+        .mid {
+            background-color: #EEEDEB;
+            height: 100%;
+            width: 100%;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            grid-template-rows: 1fr 1fr 1fr 1fr;
+        }
+
+        button {
+            background-color: #B4B4B8;
+            height: 100%;
+            width: 100%;
+            font-size: 22px;
+
+
+        }
+
+        .bottom {
+            height: 20%;
+            width: 100%;
+            display: grid;
+            grid-template-columns: 3fr 1fr 1fr;
+
+
+        }
+
+        .but {
+            border-radius: 20px;
+        }
+    </style>
+    <!-- script -->
+    <script>
+        let total = 0;
+        let displayString = "";
+        let action = 0;
+
+        function showresult() {
+            if (action == 1) {
+                total = total + Number(displayString);
+            }
+            else if (action == 2) {
+                total = total % Number(displayString);
+            }
+            else if (action == 3) {
+                total = total / Number(displayString);
+            }
+
+            else if (action == 4) {
+                total = total - Number(displayString);
+            }
+            else if (action == 5) {
+                total = total * Number(displayString);                   <!--not working-->
+            }
+            displayString = total;
+            document.getElementById("display").innerHTML = displayString;
+        }
+
+
+        function clearFunction() {
+            total = 0;
+            displayString = "";
+            document.getElementById("display").innerHTML = "";
+        }
+
+        function numbertype(passnumber) {
+            displayString = displayString + passnumber.toString();
+            document.getElementById("display").innerHTML = displayString;
+        }
+
+        function add() {
+            total = Number(displayString);
+            displayString = "";
+            action = 1;
+            document.getElementById("display").innerHTML = displayString;
+
+        }
+        function backspace() {
+            displayString = displayString.substring(0, displayString.length - 1);
+            document.getElementById("display").innerHTML = displayString
+        }
+        function percent() {
+            total = Number(displayString);
+            displayString = "";
+            action = 2;
+            document.getElementById("display").innerHTML = displayString
+        }
+        function division() {
+            total = Number(displayString);
+            displayString = "";
+            action = 3;
+            document.getElementById("display").innerHTML = displayString
+        }
+        function sub() {
+            total = Number(displayString);
+            displayString = "";
+            action = 4;
+            document.getElementById("display").innerHTML = displayString
+        }
+        function multiply() {
+            total = Number(displayString);
+            displayString = "";
+            action = 5;
+            document.getElementById("display").innerHTML = displayString
+        }
+
+    </script>
+</head>
+
+<body>
+    <!-- main division -->
+    <div class="main">
+        <!-- display -->
+        <h1 id="display"></h1>
+        <div class="two">
+            <div class="mid">
+                <div><button class="but" onclick="clearFunction()">Ac</button></div>
+                <div><button class="but" onclick="backspace()">backspace</button></div>
+                <div><button class="but" onclick="per()">%</button></div>
+                <div><button class="but" onclick="div()">/</button></div>
+                <div><button class="but" onclick="numbertype(7)">7</button></div>
+                <div><button class="but" onclick="numbertype(8)">8</button></div>
+                <div><button class="but" onclick="numbertype(9)">9</button></div>
+                <div><button class="but" onclick="mul()">×</button></div>
+                <div><button class="but" onclick="numbertype(4)">4</button></div>
+                <div><button class="but" onclick="numbertype(5)">5</button></div>
+                <div><button class="but" onclick="numbertype(6)">6</button></div>
+                <div><button class="but" onclick="sub()">-</button></div>
+                <div><button class="but" onclick="numbertype(1)">1</button></div>
+                <div><button class="but" onclick="numbertype(2)">2</button></div>
+                <div><button class="but" onclick="numbertype(3)">3</button></div>
+                <div><button class="but" onclick="add()">+</button></div>
+            </div>
+
+            <div class="bottom">
+                <div><button class="but" onclick="numbertype(0)">0</button></div>
+                <div><button class="but">1</button></div>
+                <div><button class="but" onclick="showresult()">= </button></div>
+            </div>
+        </div>
+
+    </div>
+</body>
+
+</html>

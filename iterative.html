@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        /* main container */
+        .main-container {
+            height: 90vh;
+            width: 50vw;
+            margin-left: 20%;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+        }
+
+        /* display */
+        .display {
+            background-color: rgb(67, 69, 69);
+            height: 50%;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 22px;
+            color: orange;
+        }
+
+        /* input box */
+        .input-box {
+            background-color: #00425A;
+            height: 40px;
+            width: 29%;
+            margin-top: 5%;
+            color: white;
+            display: flex;
+            margin-bottom: 2px;
+        }
+
+        h1 {
+            text-align: center;
+            margin-top: 100px;
+        }
+
+        /* button */
+        .button {
+            margin-top: 50px;
+            background-color: green;
+            height: 40px;
+            width: 30%;
+        }
+
+        /* button hover */
+        .button:hover {
+            background-color: rgb(190, 184, 10);
+            transform: matrix(align-items);
+        }
+
+        .main {
+            border-style: solid;
+            background-color: aqua;
+            height: 300px;
+            width: 300px;
+        }
+    </style>
+
+    <script>
+
+         function displayText(){
+for(let i = 1; i <= 10;i++){
+    console.log(i)
+}
+}
+ 
+
+        //  for ( let i = 1; i <= 10;i++){
+        //   console.log(i);
+        //  }
+
+
+
+        //    function displayText(){
+        //     let inputs = [];
+
+        //     for( let lucky = 0; lucky < 3; lucky++ ){
+        //         inputs = prompt("enter value for"+ lucky + "index =");
+        //     }
+
+        //     for (let y = 2; y >= 0;y--){
+        //         console.log("the output is",inputs[y]);
+        //     }
+        //    }
+
+
+
+        // function displayText() {
+        //     let inputs = [];
+        //     for (let i = 0; i < 5; i++) {
+        //         let enter = prompt("enter any number");
+        //         inputs.push(enter);
+        //     }
+        //     console.log(inputs);
+ 
+        //     //output
+        //     let index = 0;
+        //     while (index < inputs.length) {
+        //         let output = "ARRAY AT" + index + " is " + inputs[index];
+        //         index++;
+        //         console.log(output);
+        //     }
+        // }
+
+        // function displayText() {
+        //     let total = 0;
+        //     let index = 0;
+        //     while (index <= 5) {
+        //         total = total + Number(prompt("Enter a number" + index + "number = "));
+        //         index++;
+        //     }
+        //     console.log("vaule a ", total);
+        // }
+
+        // function displayText() {
+        //     let inputs = [];
+        //     inputs = [
+        //         11, 22, 33, 44, 55, 66, 77, 88, 99, 101, 102, 103, 104, 105, 106,
+        //     ];
+
+        //     let index = 0;
+        //     while (index < inputs.length) {
+        //         let output = "ARRAY AT" + index + " is " + inputs[index];
+        //         index++;
+        //         console.log(output);
+        //     }
+        // }
+
+        // function displayText() {
+        //     let inputs = [11, 22, 33];
+        //     inputs = [111, 222, 333];
+        //     console.log("the inputs are", inputs[0], inputs[1], inputs[2]);
+        // }
+
+        // function displayText() {
+        //     let total = 0;
+        //     let a = 1;
+        //     while (a <= 5) {
+        //         total += Number(prompt("enter " + a + " number = "));
+        //         a++;
+        //     }
+        //     console.log("", total);
+        // }
+
+        // function displayText() {
+        //     let y = prompt("enter the table no.");
+        //     let x = 1;
+        //     while (x <= 10) {
+        //         let z = console.log("the result is", x * y);
+        //         x++;
+        //     }
+        //     console.log("the result is =", z);
+        // }
+
+
+
+    </script>
+</head>
+
+<body>
+    <!-- main container -->
+    <div class="main">
+        <h1>Itterative Program</h1>
+        <div class="main-container">
+            <div class="input-container">
+                <button class="button" onclick="displayText()">Display Numbers</button>
+
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

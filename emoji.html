@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            overflow: hidden;
+            background-color: grey;
+        }
+
+        .face {
+            width: 80%;
+            max-width: 450px;
+            aspect-ratio: 1/1;
+            background-color: rgb(255, 213, 0);
+            border-radius: 50%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            align-items: center;
+            outline: 13px solid rgb(255, 164, 0);
+            border: 13px solid rgba(255, 187, 0, 0.926);
+            box-shadow: 1px 1px 1rem black;
+            position: absolute;
+        }
+
+        .eyes {
+            width: 80%;
+            height: 70%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-radius: 100%;
+        }
+
+        .leftEye,
+        .rightEye {
+            width: 45%;
+            height: 20%;
+            aspect-ratio: 50%;
+            border-radius: 50%;
+            /* Changed */
+            background-color: white;
+            overflow: hidden;
+            box-shadow: 1px 1px 1rem grey;
+            display: flex;
+            justify-content: center;
+            /* Centered horizontally */
+            align-items: center;
+            /* Centered vertically */
+        }
+
+        .leftPupil,
+        .rightPupil {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: black;
+        }
+
+        .mouth {
+            width: 130px;
+            height: 30px;
+            border-radius: 100px;
+            background: radial-gradient(rgb(174, 123, 113), rgb(121, 81, 53));
+            border-style: inset;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="face" id="face">
+        <div class="eyes">
+            <div class="leftEye">
+                <div class="leftPupil pupil"></div>
+            </div>
+            <div class="rightEye">
+                <div class="rightPupil pupil"></div>
+            </div>
+        </div>
+        <div class="mouth"></div>
+    </div>
+
+    <script>
+        const face = document.getElementById("face");
+        const pupils = document.querySelectorAll(".pupil");
+
+        const move = (event) => {
+            let x = (event.clientX / (window.innerWidth / 110));
+            let y = (event.clientY / 20);
+            let fx = (event.clientX / 20);
+            let fy = (event.clientY / 20);
+
+            face.style.transform = `translate(${fx}px, ${fy}px)`;
+
+            document.body.style.backgroundColor = `rgba(${y}, ${x}, ${fy}, 50%)`;
+
+            for (const pupil of pupils) {
+                pupil.style.transform = `translate(${x}px, ${y}px)`;
+            }
+        }
+
+        window.addEventListener("mousemove", move);
+    </script>
+</body>
+
+</html>
