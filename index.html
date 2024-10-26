@@ -73,18 +73,22 @@
             background: #2980b9;
         }
 
-        .sidebar p, .sidebar .section-detail {
+        .sidebar p,
+        .sidebar .section-detail {
             font-size: 14px;
             color: #d1e8ff;
             line-height: 1.6;
             text-align: center;
         }
 
-        .contact-info p, .skills p, .additional-details p {
+        .contact-info p,
+        .skills p,
+        .additional-details p {
             margin: 10px 0;
         }
 
-        .skills p, .additional-details p {
+        .skills p,
+        .additional-details p {
             color: #e1f0ff;
         }
 
@@ -102,9 +106,79 @@
             padding-bottom: 5px;
         }
 
-        .section p, .section ul {
+        .section p,
+        .section ul {
             font-size: 15px;
             margin: 10px 0;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .resume {
+                grid-template-columns: 1fr; /* Stacks sidebar and main content */
+            }
+
+            .sidebar {
+                padding: 15px; /* Reduce padding */
+            }
+
+            .main-content {
+                padding: 15px; /* Reduce padding */
+            }
+
+            .profile-photo {
+                width: 100px; /* Smaller profile photo */
+                height: 100px;
+            }
+
+            .sidebar h2 {
+                font-size: 16px; /* Smaller heading */
+            }
+
+            .sidebar p,
+            .sidebar .skills p,
+            .sidebar .additional-details p {
+                font-size: 13px; /* Smaller text */
+            }
+
+            .section h2 {
+                font-size: 18px; /* Adjust section title size */
+            }
+
+            .section p,
+            .section ul {
+                font-size: 14px; /* Smaller text */
+            }
+        }
+
+        @media (max-width: 480px) {
+            .resume {
+                padding: 10px; /* Reduce outer padding */
+            }
+
+            .profile-photo {
+                width: 80px; /* Smaller profile photo */
+                height: 80px;
+            }
+
+            .sidebar h2 {
+                font-size: 14px; /* Even smaller heading */
+            }
+
+            .sidebar p,
+            .sidebar .skills p,
+            .sidebar .additional-details p {
+                font-size: 12px; /* Even smaller text */
+            }
+
+            .section h2 {
+                font-size: 16px; /* Adjust section title size */
+            }
+
+            .section p,
+            .section ul {
+                font-size: 13px; /* Smaller text */
+            }
         }
     </style>
 </head>
@@ -119,7 +193,7 @@
             <h2>Contact</h2>
             <div class="contact-info">
                 <p>Email: ayushlolusare7@gmail.com</p>
-                <p>Phone: +91 997095 4494 </p>
+                <p>Phone: +91 997095 4494</p>
                 <p>Location: Nagpur, India</p>
             </div>
             <h2>Technical Skills</h2>
@@ -180,13 +254,13 @@
             </div>
             <div class="section">
                 <h2>Education</h2>
-                <p><strong>Bachelor of Technology</strong> in Artificial Inteligence - RTMNU University, 2024</p>
+                <p><strong>Bachelor of Technology</strong> in Artificial Intelligence - RTMNU University, 2024</p>
             </div>
             <div class="section">
                 <h2>Projects</h2>
                 <p><strong>News Website</strong> - Created a responsive news website with customizable themes and toggle
                     features.</p>
-                <p><strong>E-commerce Platform</strong> - Built a full-stack e-commerce platform with integrated payment
+                <p><strong>E-commerce Platform</strong> - Built a full-stack e-commerce platform with an integrated payment
                     gateway.</p>
             </div>
             <div class="section">
@@ -197,8 +271,8 @@
             <div class="section">
                 <h2>Achievements</h2>
                 <ul>
-                    <li>Achieved 'Employee of the Month' at ABC Corp for outstanding project contributions.</li>
-                    <li>Recognized for optimizing and securing database queries across applications.</li>
+                    <li>First Place in Coding Hackathon 2024</li>
+                    <li>Developed a community application that gained 1000+ users in 6 months</li>
                 </ul>
             </div>
         </div>
